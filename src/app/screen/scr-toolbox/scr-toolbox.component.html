@@ -1,0 +1,16 @@
+<div class="global-container">
+  <input
+    type="text"
+    class="search"
+    [(ngModel)]="search"
+    (input)="filterData()"
+    placeholder="Recherche"
+  />
+  <div class="tools">
+    <app-tool
+      [tool]="tool"
+      class="tool-container"
+      *ngFor="let tool of filteredData"
+    ></app-tool>
+  </div>
+</div>

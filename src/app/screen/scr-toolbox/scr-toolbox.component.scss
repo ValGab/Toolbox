@@ -1,0 +1,36 @@
+.search {
+  width: 50%;
+  margin: 70px 0;
+  outline: none;
+  border: none;
+  height: 50px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  border-radius: 50px;
+  padding: 20px;
+  font-size: 25px;
+}
+
+.tools {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+.tool-container {
+  width: calc(25% - 10px);
+  height: 140px;
+  display: flex;
+  padding: 10px;
+  box-sizing: border-box;
+  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  margin-bottom: 15px;
+  background-color: white;
+}
+
+// .tools-container:nth-child(4n) {
+//   margin-left: 10px;
+// }
