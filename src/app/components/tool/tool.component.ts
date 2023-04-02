@@ -11,8 +11,4 @@ export class ToolComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {}
-
-  onClick(url: string) {
-    window.open(url, '_blank');
-  }
 }

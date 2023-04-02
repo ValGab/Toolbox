@@ -25,12 +25,29 @@
   display: flex;
   padding: 10px;
   box-sizing: border-box;
-  border-radius: 5px;
+  border-radius: 10px;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
   margin-bottom: 15px;
   background-color: white;
+  animation: fadeIn 0.5s;
 }
 
-// .tools-container:nth-child(4n) {
+// .tool-container:nth-child(4n) {
 //   margin-left: 10px;
 // }
+
+.no-result {
+  font-size: 30px;
+  color: white;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

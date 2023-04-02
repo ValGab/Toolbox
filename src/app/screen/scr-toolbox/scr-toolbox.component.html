@@ -12,5 +12,6 @@
       class="tool-container"
       *ngFor="let tool of filteredData"
     ></app-tool>
+    <div *ngIf="!filteredData.length" class="no-result">Aucun résultat</div>
   </div>
 </div>

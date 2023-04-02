@@ -8,9 +8,10 @@ import { ScrToolboxComponent } from './screen/scr-toolbox/scr-toolbox.component'
 import { HttpClientModule } from '@angular/common/http';
 import { ToolComponent } from './components/tool/tool.component';
 import { MatIconModule } from '@angular/material/icon';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
-  declarations: [AppComponent, ScrToolboxComponent, ToolComponent],
+  declarations: [AppComponent, ScrToolboxComponent, ToolComponent, FooterComponent],
   imports: [
     BrowserModule,
     HttpClientModule,

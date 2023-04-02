@@ -1,5 +1,9 @@
 <div class="tool">
   <h2 class="title">{{ tool.title }}</h2>
   <p class="description">{{ tool.description }}</p>
-  <mat-icon class="link" (click)="onClick(tool.url)">open_in_new</mat-icon>
+  <div class="buttons-container">
+    <a href="{{ tool.url }}" target="_blank" class="link"
+      ><mat-icon>arrow_forward</mat-icon></a
+    >
+  </div>
 </div>

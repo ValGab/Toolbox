@@ -5,6 +5,7 @@
 
 body {
   font-family: Cabin, sans-serif;
+  background-color: rgba(94, 9, 29, 1);
 }
 
 .global-container {
@@ -14,13 +15,19 @@ body {
   align-items: center;
   margin: 0 auto;
   max-width: 1400px;
+  margin-bottom: 100px;
 }
 
-html,
-body {
-  height: 100%;
-}
-body {
-  margin: 0;
-  font-family: Roboto, "Helvetica Neue", sans-serif;
+footer {
+  width: 100%;
+  height: 50px;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  color: #5e091d;
+  font-size: 20px;
 }
