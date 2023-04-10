@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { CookieService } from 'ngx-cookie-service';
 import { Router } from '@angular/router';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-scr-add-tool',
@@ -35,23 +36,35 @@ export class ScrAddToolComponent implements OnInit {
     this.arrayLabels = [];
   }
 
+  onClickHome() {
+    this.router.navigateByUrl('/');
+  }
+
   getLabelsArray() {
-    for (let i = 0; i < this.toolForm.value.labels.length; i++) {
-      if (
-        this.toolForm.value.labels[i] === ',' ||
-        this.toolForm.value.labels[i] === ' '
-      ) {
-        this.arrayLabels.push(
-          this.toolForm.value.labels.slice(0, i).toLowerCase()
-        );
-        this.toolForm.value.labels = '';
+    if (
+      this.toolForm.value.labels.length > 1 &&
+      this.toolForm.value.labels[0] !== ',' &&
+      this.toolForm.value.labels[0] !== ' '
+    ) {
+      for (let i = 0; i < this.toolForm.value.labels.length; i++) {
+        if (
+          this.toolForm.value.labels[i] === ',' ||
+          this.toolForm.value.labels[i] === ' '
+        ) {
+          this.arrayLabels.push(
+            this.toolForm.value.labels.slice(0, i).toLowerCase()
+          );
+          this.toolForm.value.labels = '';
+        }
       }
     }
   }
 
   getLabelsArrayEnter() {
-    this.arrayLabels.push(this.toolForm.value.labels.toLowerCase());
-    this.toolForm.value.labels = '';
+    if (this.toolForm.value.labels) {
+      this.arrayLabels.push(this.toolForm.value.labels.toLowerCase());
+      this.toolForm.value.labels = '';
+    }
   }
 
   deleteLabel(label: string) {
@@ -61,7 +74,7 @@ export class ScrAddToolComponent implements OnInit {
 
   onSubmitForm() {
     this.errorMessage = '';
-    const url = 'http://localhost:3000/tools/add';
+    const url = environment.apiUrl + +'/tools/add';
     const token = this.cookieService.get('token');
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
