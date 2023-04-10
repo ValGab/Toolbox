@@ -14,12 +14,20 @@
 
 .description {
   flex: 1;
+  overflow: hidden;
+  overflow-y: scroll;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.description::-webkit-scrollbar {
+  display: none;
 }
 
 .buttons-container {
   width: 100%;
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   align-items: flex-end;
 }
 

@@ -10,8 +10,10 @@
     <app-tool
       [tool]="tool"
       class="tool-container"
-      *ngFor="let tool of filteredData"
+      *ngFor="let tool of toolsService.filteredData"
     ></app-tool>
-    <div *ngIf="!filteredData.length" class="no-result">Aucun résultat</div>
+    <div *ngIf="!toolsService.filteredData.length" class="no-result">
+      Aucun résultat
+    </div>
   </div>
 </div>

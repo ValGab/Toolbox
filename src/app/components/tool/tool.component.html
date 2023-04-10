@@ -2,6 +2,7 @@
   <h2 class="title">{{ tool.title }}</h2>
   <p class="description">{{ tool.description }}</p>
   <div class="buttons-container">
+    <div (click)="onClickDelete(tool._id)"><mat-icon>delete</mat-icon></div>
     <a href="{{ tool.url }}" target="_blank" class="link"
       ><mat-icon>arrow_forward</mat-icon></a
     >

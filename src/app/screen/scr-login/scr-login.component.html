@@ -1,0 +1,22 @@
+<div class="global-container">
+  <div class="form-container">
+    <p>Connectez-vous</p>
+    <form>
+      <input
+        id="email"
+        name="email"
+        type="email"
+        placeholder="E-mail"
+        [(ngModel)]="userEmail"
+      />
+      <input
+        id="password"
+        name="password"
+        type="password"
+        placeholder="Password"
+        [(ngModel)]="userPassword"
+      />
+      <button type="submit" (click)="onSubmitForm()">Se connecter</button>
+    </form>
+  </div>
+</div>

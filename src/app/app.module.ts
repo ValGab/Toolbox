@@ -9,15 +9,26 @@ import { HttpClientModule } from '@angular/common/http';
 import { ToolComponent } from './components/tool/tool.component';
 import { MatIconModule } from '@angular/material/icon';
 import { FooterComponent } from './components/footer/footer.component';
+import { ScrAddToolComponent } from './screen/scr-add-tool/scr-add-tool.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { ScrLoginComponent } from './screen/scr-login/scr-login.component';
 
 @NgModule({
-  declarations: [AppComponent, ScrToolboxComponent, ToolComponent, FooterComponent],
+  declarations: [
+    AppComponent,
+    ScrToolboxComponent,
+    ToolComponent,
+    FooterComponent,
+    ScrAddToolComponent,
+    ScrLoginComponent,
+  ],
   imports: [
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
     MatIconModule,
     FormsModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
