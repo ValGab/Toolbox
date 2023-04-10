@@ -32,7 +32,7 @@ export class ScrLoginComponent implements OnInit {
 
   onSubmitForm() {
     this.http
-      .post(environment.apiUrl + '/login', {
+      .post(environment.apiUrl + '/user/login', {
         email: this.userEmail,
         password: this.userPassword,
       })
