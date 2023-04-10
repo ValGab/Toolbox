@@ -74,10 +74,9 @@ export class ScrAddToolComponent implements OnInit {
 
   onSubmitForm() {
     this.errorMessage = '';
-    const url = environment.apiUrl + +'/tools/add';
+    const url = environment.apiUrl + '/tools/add';
     const token = this.cookieService.get('token');
     const headers = new HttpHeaders({
-      'Content-Type': 'application/json',
       Authorization: `Bearer ${token}`,
     });
     if (

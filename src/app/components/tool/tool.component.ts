@@ -32,7 +32,6 @@ export class ToolComponent implements OnInit {
     const url = environment.apiUrl + '/tools/delete';
     const token = this.cookieService.get('token');
     const headers = new HttpHeaders({
-      'Content-Type': 'application/json',
       Authorization: `Bearer ${token}`,
     });
 
