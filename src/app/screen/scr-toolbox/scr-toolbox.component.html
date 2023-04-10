@@ -1,4 +1,11 @@
 <div class="global-container">
+  <div
+    class="button-add"
+    (click)="onClickAdd()"
+    *ngIf="authService.userConnected()"
+  >
+    <mat-icon>add</mat-icon>
+  </div>
   <input
     type="text"
     class="search"

@@ -18,7 +18,11 @@ export class ScrLoginComponent implements OnInit {
     private cookieService: CookieService
   ) {}
 
-  ngOnInit(): void {}
+  ngOnInit() {
+    if (this.cookieService.get('token')) {
+      this.router.navigateByUrl('/');
+    }
+  }
 
   onLoginSuccess(response: any): void {
     this.cookieService.set('token', response.token, 7); // stocker le token dans un cookie nommé 'token', expire dans 7 jours

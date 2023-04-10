@@ -1,6 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { CookieService } from 'ngx-cookie-service';
+import { AuthService } from 'src/app/services/auth.service';
 import { ToolsService } from 'src/app/services/tools.service';
 
 @Component({
@@ -11,15 +12,22 @@ import { ToolsService } from 'src/app/services/tools.service';
 export class ToolComponent implements OnInit {
   @Input() tool?: any;
 
+  public deleteConfirm: Boolean = false;
+
   constructor(
     private http: HttpClient,
     private cookieService: CookieService,
-    private toolsService: ToolsService
+    private toolsService: ToolsService,
+    public authService: AuthService
   ) {}
 
   ngOnInit(): void {}
 
-  onClickDelete(id: string) {
+  onClickDelete() {
+    this.deleteConfirm = true;
+  }
+
+  deleteConfirmed(id: string) {
     const url = 'http://localhost:3000/tools/delete';
     const token = this.cookieService.get('token');
     const headers = new HttpHeaders({

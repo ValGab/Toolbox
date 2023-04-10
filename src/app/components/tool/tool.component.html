@@ -1,8 +1,21 @@
 <div class="tool">
+  <div class="delete-tool" *ngIf="deleteConfirm">
+    <p>Confirmer la suppression de "{{ tool.title }}" ?</p>
+    <div class="buttons-delete">
+      <div><mat-icon (click)="deleteConfirm = false">close</mat-icon></div>
+      <div><mat-icon (click)="deleteConfirmed(tool._id)">done</mat-icon></div>
+    </div>
+  </div>
   <h2 class="title">{{ tool.title }}</h2>
   <p class="description">{{ tool.description }}</p>
   <div class="buttons-container">
-    <div (click)="onClickDelete(tool._id)"><mat-icon>delete</mat-icon></div>
+    <div
+      class="delete-button"
+      (click)="onClickDelete()"
+      *ngIf="authService.userConnected()"
+    >
+      <mat-icon>delete</mat-icon>
+    </div>
     <a href="{{ tool.url }}" target="_blank" class="link"
       ><mat-icon>arrow_forward</mat-icon></a
     >

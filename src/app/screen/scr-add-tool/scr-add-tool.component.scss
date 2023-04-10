@@ -1,8 +1,15 @@
 @import url("../../components/tool/tool.component.scss");
 
+.add-title {
+  margin-top: 50px;
+  color: white;
+  font-size: 25px;
+}
+
 textarea {
   font-family: inherit;
   font-size: 18px;
+  padding: 5px;
 }
 
 .form-container > form {
@@ -23,6 +30,7 @@ textarea {
   input {
     height: 30px;
     font-size: 18px;
+    padding: 5px;
   }
 }
 
@@ -42,10 +50,35 @@ textarea {
     cursor: pointer;
     transition: background-color 0.2s;
     &:hover {
-      background-color: grey;
+      background-color: rgb(17, 12, 58);
       color: white;
     }
   }
+}
+
+.labels-container {
+  width: 100%;
+  display: flex;
+  gap: 10px;
+}
+
+.label {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  background-color: white;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.delete-label {
+  cursor: pointer;
+}
+
+.error {
+  font-size: 20px;
+  color: white;
+  text-align: center;
 }
 
 .tool-container {
