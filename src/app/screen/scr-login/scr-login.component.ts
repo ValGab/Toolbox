@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { CookieService } from 'ngx-cookie-service';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-scr-login',
@@ -31,7 +32,7 @@ export class ScrLoginComponent implements OnInit {
 
   onSubmitForm() {
     this.http
-      .post('http://localhost:3000/user/login', {
+      .post(environment.apiUrl + '/login', {
         email: this.userEmail,
         password: this.userPassword,
       })
