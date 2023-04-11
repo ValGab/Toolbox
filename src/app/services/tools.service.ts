@@ -6,16 +6,13 @@ import { environment } from 'src/environments/environment';
   providedIn: 'root',
 })
 export class ToolsService {
+  constructor(private http: HttpClient) {}
+
   public data: any;
   public filteredData: any[any] = [];
 
-  constructor(private http: HttpClient) {}
-
   fetchData() {
-    this.http.get(environment.apiUrl).subscribe((data) => {
-      this.data = data;
-      this.filteredData = data;
-    });
+    return this.http.get(environment.apiUrl);
   }
 
   filterData(search: string) {
@@ -39,7 +36,9 @@ export class ToolsService {
               .toLowerCase()
               .includes(searchSplit[h].toLowerCase())
           ) {
-            array.push(newData[i]);
+            if (array.indexOf(newData[i]) === -1) {
+              array.push(newData[i]);
+            }
           } else {
             for (let j = 0; j < newData[i].labels.length; j++) {
               if (

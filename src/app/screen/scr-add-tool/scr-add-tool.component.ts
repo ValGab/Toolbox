@@ -92,18 +92,18 @@ export class ScrAddToolComponent implements OnInit {
         labels: this.arrayLabels,
       };
 
-      this.http.post(url, body, { headers }).subscribe(
-        (response) => {
+      this.http.post(url, body, { headers }).subscribe({
+        next: (response) => {
           if (response) {
             this.router.navigateByUrl('/');
           }
         },
-        (error) => {
-          if (error.status === 409) {
-            this.errorMessage = error.message;
+        error: (err) => {
+          if (err.status === 409) {
+            this.errorMessage = err.message;
           }
-        }
-      );
+        },
+      });
     }
   }
 }

@@ -11,16 +11,23 @@
     class="search"
     [(ngModel)]="search"
     (input)="filterData()"
-    placeholder="Recherche"
+    placeholder="Rechercher un outil..."
   />
+  <h2 class="site-title">
+    Une banque d'outils évolutive pour de multiples besoins !
+  </h2>
   <div class="tools">
     <app-tool
       [tool]="tool"
       class="tool-container"
       *ngFor="let tool of toolsService.filteredData"
     ></app-tool>
-    <div *ngIf="!toolsService.filteredData.length" class="no-result">
+    <div
+      *ngIf="!toolsService.filteredData.length && !isLoading"
+      class="no-result"
+    >
       Aucun résultat
     </div>
+    <span class="loader" *ngIf="isLoading"></span>
   </div>
 </div>

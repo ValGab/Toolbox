@@ -35,8 +35,11 @@ export class ToolComponent implements OnInit {
       Authorization: `Bearer ${token}`,
     });
 
-    this.http.post(url, { id }, { headers }).subscribe((response) => {
-      this.toolsService.fetchData();
+    this.http.post(url, { id }, { headers }).subscribe(() => {
+      this.toolsService.fetchData().subscribe((data) => {
+        this.toolsService.data = data;
+        this.toolsService.filteredData = data;
+      });
     });
   }
 }

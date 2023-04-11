@@ -6,7 +6,7 @@
       <div><mat-icon (click)="deleteConfirmed(tool._id)">done</mat-icon></div>
     </div>
   </div>
-  <h2 class="title">{{ tool.title }}</h2>
+  <a href="{{ tool.url }}" target="_blank" class="title">{{ tool.title }}</a>
   <p class="description">{{ tool.description }}</p>
   <div class="buttons-container">
     <div

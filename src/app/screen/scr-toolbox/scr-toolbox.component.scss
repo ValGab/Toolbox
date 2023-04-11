@@ -10,6 +10,14 @@
   font-size: 25px;
 }
 
+.site-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 20px;
+  color: white;
+  text-align: center;
+}
+
 .tools {
   display: flex;
   justify-content: center;
@@ -22,7 +30,7 @@
 
 .tool-container {
   width: calc(25% - 10px);
-  height: 160px;
+  height: 180px;
   display: flex;
   padding: 10px;
   box-sizing: border-box;
@@ -30,7 +38,12 @@
   box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
   margin-bottom: 15px;
   background-color: white;
-  animation: fadeIn 0.5s;
+  animation: all 0.5s;
+  transition: 0.2s;
+  &:hover {
+    background-color: rgb(17, 12, 58);
+    color: white;
+  }
 }
 
 .button-add {
@@ -50,39 +63,6 @@
   color: white;
 }
 
-.modal-container {
-  width: 100vw;
-  height: 100vh;
-  backdrop-filter: blur(10px);
-  position: absolute;
-  z-index: 1;
-}
-
-.modal {
-  position: absolute;
-  left: 0;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  margin: auto;
-  width: 250px;
-  height: 100px;
-  background-color: white;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 10px;
-  border-radius: 10px;
-}
-
-.buttons-modal {
-  margin-top: 20px;
-  display: flex;
-  align-items: center;
-  gap: 20px;
-}
-
 @keyframes fadeIn {
   0% {
     opacity: 0;
@@ -91,5 +71,11 @@
   100% {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@media (max-width: 1430px) {
+  .tool-container {
+    width: calc(33% - 30px);
   }
 }

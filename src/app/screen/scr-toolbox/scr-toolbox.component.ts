@@ -10,6 +10,7 @@ import { Router } from '@angular/router';
 })
 export class ScrToolboxComponent implements OnInit {
   public search: string = '';
+  public isLoading: Boolean = false;
 
   constructor(
     public toolsService: ToolsService,
@@ -18,7 +19,12 @@ export class ScrToolboxComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.toolsService.fetchData();
+    this.isLoading = true;
+    this.toolsService.fetchData().subscribe((data) => {
+      this.toolsService.data = data;
+      this.toolsService.filteredData = data;
+      this.isLoading = false;
+    });
   }
 
   filterData() {
@@ -26,6 +32,6 @@ export class ScrToolboxComponent implements OnInit {
   }
 
   onClickAdd() {
-    this.router.navigateByUrl('tools/add');
+    this.router.navigateByUrl('/tools/add');
   }
 }
