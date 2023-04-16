@@ -29,7 +29,7 @@ export class ToolsService {
     let array = [];
 
     for (let h = 0; h < searchSplit.length; h++) {
-      if (searchSplit[h] !== '') {
+      if (searchSplit[h] !== '' && searchSplit[h].length > 1) {
         for (let i = 0; i < newData.length; i++) {
           if (
             this.strNoAccent(newData[i].title)

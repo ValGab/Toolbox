@@ -16,6 +16,7 @@
   margin-top: 20px;
   color: white;
   text-align: center;
+  padding: 0 10px;
 }
 
 .tools {
@@ -77,5 +78,20 @@
 @media (max-width: 1430px) {
   .tool-container {
     width: calc(33% - 30px);
+  }
+}
+
+@media (max-width: 750px) {
+  .search {
+    width: 70%;
+  }
+  .tool-container {
+    width: calc(50% - 20px);
+  }
+}
+
+@media (max-width: 540px) {
+  .tool-container {
+    width: calc(100% - 30px);
   }
 }
