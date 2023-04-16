@@ -58,7 +58,7 @@ textarea {
   width: 100%;
   display: flex;
   justify-content: center;
-  button {
+  div {
     width: 60%;
     height: 50px;
     margin-top: 20px;
@@ -67,6 +67,9 @@ textarea {
     border: none;
     border-radius: 10px;
     font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     cursor: pointer;
     transition: background-color 0.2s;
     &:hover {
