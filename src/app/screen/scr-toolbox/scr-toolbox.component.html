@@ -10,7 +10,7 @@
     type="text"
     class="search"
     [(ngModel)]="search"
-    (input)="filterData()"
+    (input)="filterData(search)"
     placeholder="Rechercher un outil..."
   />
   <h2 class="site-title">
@@ -20,12 +20,10 @@
     <app-tool
       [tool]="tool"
       class="tool-container"
-      *ngFor="let tool of toolsService.filteredData"
+      *ngFor="let tool of filteredData"
+      (delete)="refreshTools()"
     ></app-tool>
-    <div
-      *ngIf="!toolsService.filteredData.length && !isLoading"
-      class="no-result"
-    >
+    <div *ngIf="!filteredData.length && !isLoading" class="no-result">
       Aucun résultat
     </div>
     <span class="loader" *ngIf="isLoading"></span>

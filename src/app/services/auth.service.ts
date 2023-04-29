@@ -7,7 +7,7 @@ import { CookieService } from 'ngx-cookie-service';
 export class AuthService {
   constructor(private cookieService: CookieService) {}
 
-  userConnected(): Boolean {
+  userConnected(): boolean {
     if (this.cookieService.get('token')) {
       return true;
     }

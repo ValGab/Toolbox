@@ -1,5 +1,5 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 import { CookieService } from 'ngx-cookie-service';
 import { AuthService } from 'src/app/services/auth.service';
 import { ToolsService } from 'src/app/services/tools.service';
@@ -12,6 +12,7 @@ import { environment } from 'src/environments/environment';
 })
 export class ToolComponent implements OnInit {
   @Input() tool?: any;
+  @Output() delete = new EventEmitter<void>();
 
   public deleteConfirm: Boolean = false;
 
@@ -36,9 +37,8 @@ export class ToolComponent implements OnInit {
     });
 
     this.http.post(url, { id }, { headers }).subscribe(() => {
-      this.toolsService.fetchData().subscribe((data) => {
-        this.toolsService.data = data;
-        this.toolsService.filteredData = data;
+      this.toolsService.getTools().subscribe(() => {
+        this.delete.emit();
       });
     });
   }
