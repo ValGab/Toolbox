@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  apiUrl: 'http://toolbox.valentingbr.fr',
+  apiUrl: 'https://toolbox-back.onrender.com',
 };
