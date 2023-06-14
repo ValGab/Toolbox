@@ -10,9 +10,9 @@ import { AuthService } from 'src/app/services/auth.service';
 export class FooterComponent {
   constructor(private router: Router, private authService: AuthService) {}
 
-  onClickName() {
-    if (!this.authService.userConnected()) {
-      this.router.navigateByUrl('login');
-    }
-  }
+  // onClickAdmin() {
+  //   if (!this.authService.userConnected()) {
+  //     this.router.navigateByUrl('login');
+  //   }
+  // }
 }
