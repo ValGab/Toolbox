@@ -54,7 +54,7 @@ export class ScrAddToolComponent implements OnInit {
           this.arrayLabels.push(
             this.toolForm.value.labels.slice(0, i).toLowerCase()
           );
-          this.toolForm.value.labels = '';
+          this.toolForm.get('labels')?.setValue('');
         }
       }
     }
@@ -63,7 +63,7 @@ export class ScrAddToolComponent implements OnInit {
   getLabelsArrayEnter() {
     if (this.toolForm.value.labels) {
       this.arrayLabels.push(this.toolForm.value.labels.toLowerCase());
-      this.toolForm.value.labels = '';
+      this.toolForm.get('labels')?.setValue('');
     }
   }
 
