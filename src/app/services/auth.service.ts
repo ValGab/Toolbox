@@ -13,4 +13,8 @@ export class AuthService {
     }
     return false;
   }
+
+  userToDisconnect() {
+    this.cookieService.delete('token');
+  }
 }

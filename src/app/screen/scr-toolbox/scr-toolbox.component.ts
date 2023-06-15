@@ -94,4 +94,8 @@ export class ScrToolboxComponent implements OnInit {
   onClickAdd() {
     this.router.navigateByUrl('/tools/add');
   }
+
+  onClickExit() {
+    this.authService.userToDisconnect();
+  }
 }

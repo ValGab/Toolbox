@@ -1,4 +1,10 @@
 <div class="global-container">
+  <mat-icon
+    class="exit"
+    *ngIf="authService.userConnected()"
+    (click)="onClickExit()"
+    >exit_to_app</mat-icon
+  >
   <div
     class="button-add"
     (click)="onClickAdd()"
