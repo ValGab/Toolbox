@@ -12,6 +12,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { ScrAddToolComponent } from './screen/scr-add-tool/scr-add-tool.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ScrLoginComponent } from './screen/scr-login/scr-login.component';
+import { ScrModifyToolComponent } from './screen/scr-modify-tool/scr-modify-tool.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { ScrLoginComponent } from './screen/scr-login/scr-login.component';
     FooterComponent,
     ScrAddToolComponent,
     ScrLoginComponent,
+    ScrModifyToolComponent,
   ],
   imports: [
     BrowserModule,

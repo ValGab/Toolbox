@@ -9,12 +9,21 @@
   <a href="{{ tool.url }}" target="_blank" class="title">{{ tool.title }}</a>
   <p class="description">{{ tool.description }}</p>
   <div class="buttons-container">
-    <div
-      class="delete-button"
-      (click)="onClickDelete()"
-      *ngIf="authService.userConnected()"
-    >
-      <mat-icon>delete</mat-icon>
+    <div class="buttons-edit">
+      <div
+        class="delete-button"
+        (click)="onClickDelete()"
+        *ngIf="authService.userConnected()"
+      >
+        <mat-icon>delete</mat-icon>
+      </div>
+      <div
+        class="modify-button"
+        (click)="onClickEdit(tool._id)"
+        *ngIf="authService.userConnected()"
+      >
+        <mat-icon>edit</mat-icon>
+      </div>
     </div>
     <a href="{{ tool.url }}" target="_blank" class="link"
       ><mat-icon>arrow_forward</mat-icon></a

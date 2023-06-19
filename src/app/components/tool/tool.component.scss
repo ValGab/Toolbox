@@ -65,15 +65,19 @@
 .buttons-container {
   width: 100%;
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   margin-top: 10px;
   position: relative;
 }
 
-.delete-button {
-  position: absolute;
-  left: 2px;
-  bottom: 2px;
+.buttons-edit {
+  display: flex;
+  gap: 8px;
+}
+
+.delete-button,
+.modify-button {
+  width: fit-content;
   cursor: pointer;
 }
 

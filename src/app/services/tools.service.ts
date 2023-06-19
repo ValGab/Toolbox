@@ -11,4 +11,8 @@ export class ToolsService {
   getTools() {
     return this.http.get(environment.apiUrl);
   }
+
+  getTool(id: string) {
+    return this.http.get(environment.apiUrl + '/tools/modify/' + id);
+  }
 }

@@ -4,6 +4,7 @@ import { ScrToolboxComponent } from './screen/scr-toolbox/scr-toolbox.component'
 import { ScrAddToolComponent } from './screen/scr-add-tool/scr-add-tool.component';
 import { ScrLoginComponent } from './screen/scr-login/scr-login.component';
 import { AuthguardGuard } from './shared/authguard.guard';
+import { ScrModifyToolComponent } from './screen/scr-modify-tool/scr-modify-tool.component';
 
 const routes: Routes = [
   { path: '', component: ScrToolboxComponent },
@@ -11,6 +12,11 @@ const routes: Routes = [
   {
     path: 'tools/add',
     component: ScrAddToolComponent,
+    canActivate: [AuthguardGuard],
+  },
+  {
+    path: 'tools/modify/:id',
+    component: ScrModifyToolComponent,
     canActivate: [AuthguardGuard],
   },
 ];
