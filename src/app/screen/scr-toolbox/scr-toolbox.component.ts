@@ -1,28 +1,46 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit, Renderer2 } from '@angular/core';
 import { ToolsService } from 'src/app/services/tools.service';
 import { AuthService } from 'src/app/services/auth.service';
 import { Router } from '@angular/router';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-scr-toolbox',
   templateUrl: './scr-toolbox.component.html',
   styleUrls: ['./scr-toolbox.component.scss'],
 })
-export class ScrToolboxComponent implements OnInit {
+export class ScrToolboxComponent implements OnInit, OnDestroy {
   public search: string = '';
   public isLoading: boolean = true;
 
   public data: any;
   public filteredData: any[any] = [];
 
+  public showModal: boolean = false;
+  public toolRequest: string = '';
+
+  public isLoadingRequest: boolean = false;
+  public antispam: number[] = [];
+  public resultAntispam: number = 0;
+  public errorAntispam: boolean = false;
+
+  private toolToSubmit: Subscription = new Subscription();
+
+  public message: string = '';
+
   constructor(
     public toolsService: ToolsService,
     public authService: AuthService,
-    public router: Router
+    public router: Router,
+    private renderer: Renderer2
   ) {}
 
   ngOnInit() {
     this.getTools();
+  }
+
+  ngOnDestroy() {
+    this.toolToSubmit.unsubscribe();
   }
 
   private getTools() {
@@ -97,5 +115,58 @@ export class ScrToolboxComponent implements OnInit {
 
   onClickExit() {
     this.authService.userToDisconnect();
+  }
+
+  onClickToolRequest() {
+    this.showModal = true;
+    this.antispamGenerate();
+    this.resultAntispam = 0;
+    this.isLoadingRequest = false;
+    this.toolRequest = '';
+    this.message = '';
+    this.renderer.addClass(document.documentElement, 'no-scroll');
+  }
+
+  antispamGenerate() {
+    for (let i = 0; i < 2; i++) {
+      this.antispam.push(Math.floor(Math.random() * 10));
+    }
+  }
+
+  onClickModal(event: Event) {
+    event.stopPropagation();
+  }
+
+  onClickCloseModal() {
+    this.showModal = false;
+    this.toolRequest = '';
+    this.antispam.length = 0;
+    this.renderer.removeClass(document.documentElement, 'no-scroll');
+  }
+
+  onClickSubmitTool() {
+    this.errorAntispam = false;
+    if (this.antispam) {
+      let antispamNumber = this.antispam[0] + this.antispam[1];
+      if (antispamNumber !== this.resultAntispam) {
+        this.errorAntispam = true;
+      } else {
+        if (this.toolRequest) {
+          this.isLoadingRequest = true;
+          this.toolToSubmit = this.toolsService
+            .submitTool(this.toolRequest.toString())
+            .subscribe((result) => {
+              if (result) {
+                this.message = 'Outil envoyé ! Merci !';
+                setTimeout(() => {
+                  this.showModal = false;
+                }, 3000);
+              } else {
+                this.message = "Une erreur s'est produite, veuillez réessayer.";
+              }
+            });
+        }
+      }
+    }
   }
 }

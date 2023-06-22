@@ -72,6 +72,92 @@
   color: white;
 }
 
+/** MODAL **/
+
+.tool-link-modal {
+  margin-top: 20px;
+  color: white;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.modal-container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  backdrop-filter: blur(5px);
+  z-index: 1;
+}
+
+.modal {
+  width: 650px;
+  height: 250px;
+  background-color: white;
+  position: relative;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  p {
+    font-size: 20px;
+    text-align: center;
+  }
+  input {
+    outline: none;
+    width: 45%;
+    height: 30px;
+    font-size: 18px;
+    padding: 5px;
+  }
+}
+
+.closeModal {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  cursor: pointer;
+}
+
+.antispam {
+  text-align: center;
+  p {
+    font-size: 16px;
+    margin-top: 5px;
+    color: red;
+  }
+}
+
+.action-buttons {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  div {
+    width: 40%;
+    height: 50px;
+    outline: none;
+    background-color: var(--primary);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    &:hover {
+      background-color: rgb(17, 12, 58);
+      color: white;
+    }
+  }
+}
+
 @keyframes fadeIn {
   0% {
     opacity: 0;

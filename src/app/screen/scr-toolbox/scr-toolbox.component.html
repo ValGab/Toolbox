@@ -1,3 +1,29 @@
+<div class="modal-container" *ngIf="showModal" (click)="onClickCloseModal()">
+  <div class="modal" (click)="onClickModal($event)">
+    <div (click)="onClickCloseModal()" class="closeModal">
+      <mat-icon>close</mat-icon>
+    </div>
+    <p>Tu as un outil à partager ? Soumets-le-moi !</p>
+    <input
+      type="text"
+      [(ngModel)]="toolRequest"
+      placeholder="Titre de l'outil"
+    />
+    <div class="antispam">
+      <span>Résultat de l'addition :</span
+      ><span> {{ antispam[0] }} + {{ antispam[1] }} = </span>
+      <input type="number" min="0" max="18" [(ngModel)]="resultAntispam" />
+      <p *ngIf="errorAntispam">Le résultat de l'addition n'est pas juste !</p>
+    </div>
+    <div class="action-buttons" *ngIf="!isLoadingRequest">
+      <div (click)="onClickSubmitTool()">Soumettre l'outil</div>
+    </div>
+    <div *ngIf="isLoadingRequest && !message"><p>Envoi en cours...</p></div>
+    <div *ngIf="message">
+      <p>{{ message }}</p>
+    </div>
+  </div>
+</div>
 <div class="global-container">
   <mat-icon
     class="exit"
@@ -22,6 +48,9 @@
   <h2 class="site-title">
     TOOLBOX : une banque d'outils évolutive pour de multiples besoins !
   </h2>
+  <p (click)="onClickToolRequest()" class="tool-link-modal">
+    J'ai un outil à partager !
+  </p>
   <div class="tools">
     <app-tool
       [tool]="tool"

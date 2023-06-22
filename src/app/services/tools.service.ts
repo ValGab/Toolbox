@@ -15,4 +15,10 @@ export class ToolsService {
   getTool(id: string) {
     return this.http.get(environment.apiUrl + '/tools/modify/' + id);
   }
+
+  submitTool(tool: string) {
+    return this.http.post(environment.apiUrl + '/submit', {
+      tool,
+    });
+  }
 }

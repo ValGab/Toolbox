@@ -10,6 +10,11 @@
 body {
   font-family: Cabin, sans-serif;
   background-color: var(--primary);
+  // overflow-y: scroll !important;
+}
+
+.no-scroll {
+  overflow: hidden;
 }
 
 .global-container {

@@ -1,7 +1,7 @@
 <div class="global-container">
   <h1 class="add-title">Modification d'un outil</h1>
-  <div class="button-home">
-    <div (click)="onClickHome()">Retour</div>
+  <div class="button-home" (click)="onClickHome()">
+    <div>Retour</div>
   </div>
   <span class="loader" *ngIf="isLoading"></span>
   <div class="form-container" *ngIf="!isLoading">
