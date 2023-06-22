@@ -1,4 +1,9 @@
-<div class="modal-container" *ngIf="showModal" (click)="onClickCloseModal()">
+<div
+  class="modal-container"
+  [class.centered-modal]="showModal"
+  *ngIf="showModal"
+  (click)="onClickCloseModal()"
+>
   <div class="modal" (click)="onClickModal($event)">
     <div (click)="onClickCloseModal()" class="closeModal">
       <mat-icon>close</mat-icon>
