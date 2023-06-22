@@ -22,7 +22,9 @@
       <p *ngIf="errorAntispam">Le résultat de l'addition n'est pas juste !</p>
     </div>
     <div class="action-buttons" *ngIf="!isLoadingRequest">
-      <div (click)="onClickSubmitTool()">Soumettre l'outil</div>
+      <div [ngClass]="{ disable: !toolRequest }" (click)="onClickSubmitTool()">
+        Soumettre l'outil
+      </div>
     </div>
     <div *ngIf="isLoadingRequest && !message"><p>Envoi en cours...</p></div>
     <div *ngIf="message">

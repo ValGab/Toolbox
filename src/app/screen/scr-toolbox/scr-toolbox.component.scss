@@ -110,9 +110,11 @@
   align-items: center;
   justify-content: center;
   gap: 20px;
+  animation: scale 0.2s ease-in-out both;
   p {
     font-size: 20px;
     text-align: center;
+    font-weight: bold;
   }
   input {
     outline: none;
@@ -128,6 +130,7 @@
   top: 5px;
   right: 5px;
   cursor: pointer;
+  color: var(--primary);
 }
 
 .antispam {
@@ -164,6 +167,11 @@
   }
 }
 
+.action-buttons .disable {
+  cursor: not-allowed;
+  background-color: grey;
+}
+
 @keyframes fadeIn {
   0% {
     opacity: 0;
@@ -172,6 +180,18 @@
   100% {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@keyframes scale {
+  0% {
+    transform: scale(0.9);
+  }
+  70% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
   }
 }
 
