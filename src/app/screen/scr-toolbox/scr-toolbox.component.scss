@@ -94,7 +94,7 @@
 
 .modal {
   width: 650px;
-  height: 250px;
+  height: 260px;
   background-color: white;
   position: relative;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
@@ -187,5 +187,20 @@
 @media (max-width: 540px) {
   .tool-container {
     width: calc(100% - 30px);
+  }
+
+  .modal {
+    p {
+      font-size: 16px;
+    }
+    input {
+      width: 70%;
+    }
+  }
+
+  .antispam {
+    input {
+      width: 10%;
+    }
   }
 }
