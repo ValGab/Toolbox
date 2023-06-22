@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit, Renderer2 } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ToolsService } from 'src/app/services/tools.service';
 import { AuthService } from 'src/app/services/auth.service';
 import { Router } from '@angular/router';
@@ -31,8 +31,7 @@ export class ScrToolboxComponent implements OnInit, OnDestroy {
   constructor(
     public toolsService: ToolsService,
     public authService: AuthService,
-    public router: Router,
-    private renderer: Renderer2
+    public router: Router
   ) {}
 
   ngOnInit() {
@@ -124,7 +123,6 @@ export class ScrToolboxComponent implements OnInit, OnDestroy {
     this.isLoadingRequest = false;
     this.toolRequest = '';
     this.message = '';
-    this.renderer.addClass(document.documentElement, 'no-scroll');
   }
 
   antispamGenerate() {
@@ -141,7 +139,6 @@ export class ScrToolboxComponent implements OnInit, OnDestroy {
     this.showModal = false;
     this.toolRequest = '';
     this.antispam.length = 0;
-    this.renderer.removeClass(document.documentElement, 'no-scroll');
   }
 
   onClickSubmitTool() {
