@@ -1,0 +1,28 @@
+.theme-selection {
+  margin-top: 10px;
+  width: 70%;
+  height: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  cursor: pointer;
+}
+
+.theme-colors {
+  border: 1px solid white;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex: 1;
+}
+
+.theme-color {
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+
+.color {
+  width: 25%;
+  height: 100%;
+}

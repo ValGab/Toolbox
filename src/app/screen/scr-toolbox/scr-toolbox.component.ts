@@ -13,6 +13,8 @@ export class ScrToolboxComponent implements OnInit, OnDestroy {
   public search: string = '';
   public isLoading: boolean = true;
 
+  public themesList: any[any];
+
   public data: any;
   public filteredData: any[any] = [];
 

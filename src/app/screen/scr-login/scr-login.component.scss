@@ -6,7 +6,7 @@
   flex-direction: column;
   p {
     font-size: 20px;
-    color: white;
+    color: var(--secondary);
     margin-bottom: 20px;
   }
 }
@@ -30,7 +30,7 @@ button {
   height: 50px;
   margin-top: 20px;
   outline: none;
-  background-color: white;
+  background-color: var(--secondary);
   border: none;
   border-radius: 10px;
   font-size: 18px;
@@ -38,6 +38,6 @@ button {
   transition: background-color 0.2s;
   &:hover {
     background-color: grey;
-    color: white;
+    color: var(--secondary);
   }
 }

@@ -14,6 +14,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { ScrLoginComponent } from './screen/scr-login/scr-login.component';
 import { ScrModifyToolComponent } from './screen/scr-modify-tool/scr-modify-tool.component';
 import { ScrSharedToolsComponent } from './screen/scr-shared-tools/scr-shared-tools.component';
+import { ThemesService } from './services/themes.service';
+import { ThemeSelectionComponent } from './components/theme-selection/theme-selection.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +27,7 @@ import { ScrSharedToolsComponent } from './screen/scr-shared-tools/scr-shared-to
     ScrLoginComponent,
     ScrModifyToolComponent,
     ScrSharedToolsComponent,
+    ThemeSelectionComponent,
   ],
   imports: [
     BrowserModule,
@@ -34,7 +37,7 @@ import { ScrSharedToolsComponent } from './screen/scr-shared-tools/scr-shared-to
     FormsModule,
     ReactiveFormsModule,
   ],
-  providers: [],
+  providers: [ThemesService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

@@ -1,0 +1,14 @@
+<div class="theme-selection">
+  <div
+    class="theme-colors"
+    *ngFor="let theme of themesList"
+    (click)="onClickTheme(theme.themeId)"
+  >
+    <div class="theme-color" *ngFor="let color of theme.colors">
+      <div class="color" [style.background-color]="color.primaryColor"></div>
+      <div class="color" [style.background-color]="color.secondaryColor"></div>
+      <div class="color" [style.background-color]="color.hoverColor"></div>
+      <div class="color" [style.background-color]="color.fontColor"></div>
+    </div>
+  </div>
+</div>

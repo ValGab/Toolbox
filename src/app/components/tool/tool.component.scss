@@ -9,7 +9,7 @@
 
 .delete-tool {
   position: absolute;
-  background-color: white;
+  background-color: var(--secondary);
   width: 100%;
   height: 100%;
   display: flex;
@@ -24,8 +24,8 @@
     line-height: 20px;
   }
   &:hover {
-    background-color: rgb(17, 12, 58);
-    color: white;
+    background-color: var(--hover);
+    color: var(--secondary);
   }
 }
 
@@ -36,7 +36,7 @@
     cursor: pointer;
     &:hover {
       background-color: grey;
-      color: white;
+      color: var(--secondary);
     }
   }
 }
