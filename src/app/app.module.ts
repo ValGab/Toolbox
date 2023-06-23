@@ -13,6 +13,7 @@ import { ScrAddToolComponent } from './screen/scr-add-tool/scr-add-tool.componen
 import { ReactiveFormsModule } from '@angular/forms';
 import { ScrLoginComponent } from './screen/scr-login/scr-login.component';
 import { ScrModifyToolComponent } from './screen/scr-modify-tool/scr-modify-tool.component';
+import { ScrSharedToolsComponent } from './screen/scr-shared-tools/scr-shared-tools.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { ScrModifyToolComponent } from './screen/scr-modify-tool/scr-modify-tool
     ScrAddToolComponent,
     ScrLoginComponent,
     ScrModifyToolComponent,
+    ScrSharedToolsComponent,
   ],
   imports: [
     BrowserModule,

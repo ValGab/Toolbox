@@ -12,6 +12,10 @@ export class ToolsService {
     return this.http.get(environment.apiUrl);
   }
 
+  getToolsShared() {
+    return this.http.get(environment.apiUrl + '/shared');
+  }
+
   getTool(id: string) {
     return this.http.get(environment.apiUrl + '/tools/modify/' + id);
   }

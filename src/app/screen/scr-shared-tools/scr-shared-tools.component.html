@@ -1,0 +1,17 @@
+<div class="global-container">
+  <div class="button-home" (click)="onClickHome()">
+    <div>Retour</div>
+  </div>
+  <div class="list-tools-shared">
+    <h1>Liste des outils partagés</h1>
+    <div class="loader" *ngIf="isLoading"></div>
+    <div *ngIf="!isLoading">
+      <ul *ngFor="let tool of data">
+        <li>
+          {{ tool.title.toUpperCase() }}
+          <span>- {{ transformDate(tool.date) }}</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

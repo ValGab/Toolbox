@@ -12,6 +12,10 @@ body {
   background-color: var(--primary);
 }
 
+h1 {
+  font-size: 25px;
+}
+
 .global-container {
   display: flex;
   flex-direction: column;
@@ -20,6 +24,26 @@ body {
   margin: 0 auto;
   max-width: 1400px;
   margin-bottom: 100px;
+}
+
+.button-home {
+  width: 200px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  outline: none;
+  background-color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  &:hover {
+    background-color: rgb(17, 12, 58);
+    color: white;
+  }
 }
 
 footer {

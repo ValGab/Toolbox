@@ -112,6 +112,10 @@ export class ScrToolboxComponent implements OnInit, OnDestroy {
     this.router.navigateByUrl('/tools/add');
   }
 
+  onClickToolsShared() {
+    this.router.navigateByUrl('/tools/shared');
+  }
+
   onClickExit() {
     this.authService.userToDisconnect();
   }

@@ -39,12 +39,21 @@
     (click)="onClickExit()"
     >exit_to_app</mat-icon
   >
-  <div
-    class="button-add"
-    (click)="onClickAdd()"
-    *ngIf="authService.userConnected()"
-  >
-    <mat-icon>add</mat-icon>
+  <div class="buttons-add-shared-container">
+    <div
+      class="button-add"
+      (click)="onClickAdd()"
+      *ngIf="authService.userConnected()"
+    >
+      <mat-icon>add</mat-icon>
+    </div>
+    <div
+      class="button-tools-shared"
+      (click)="onClickToolsShared()"
+      *ngIf="authService.userConnected()"
+    >
+      <mat-icon>share</mat-icon>
+    </div>
   </div>
   <input
     type="text"
