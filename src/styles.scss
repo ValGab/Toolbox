@@ -49,31 +49,6 @@ h1 {
   }
 }
 
-footer {
-  width: 100%;
-  height: 50px;
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: var(--secondary);
-  font-size: 20px;
-  border-top: 5px solid var(--primary);
-  a {
-    text-decoration: none;
-    color: var(--primary);
-    &:hover {
-      color: var(--hover);
-    }
-  }
-  span {
-    margin-left: 5px;
-    color: var(--font);
-  }
-}
-
 .loader {
   color: var(--secondary);
   font-size: 10px;

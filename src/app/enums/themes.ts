@@ -25,7 +25,7 @@ const themes = [
     themeId: 'theme3',
     colors: [
       {
-        primaryColor: '#8c2f39',
+        primaryColor: '#7544d4',
         secondaryColor: '#f2f2f2',
         hoverColor: '#2c3e50',
         fontColor: '#8c1111',
@@ -38,7 +38,7 @@ const themes = [
       {
         primaryColor: '#1d1b58',
         secondaryColor: '#ffd700',
-        hoverColor: '#c65887',
+        hoverColor: '#ffffff',
         fontColor: '#333333',
       },
     ],
