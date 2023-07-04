@@ -26,7 +26,9 @@ export class ScrSharedToolsComponent implements OnInit {
 
   public transformDate(date: Date) {
     let transformDate = new Date(date);
-    return `${transformDate.getDate()}/${transformDate.getMonth()}/${transformDate.getFullYear()}`;
+    return `${transformDate.getDate()}/${
+      transformDate.getMonth() + 1
+    }/${transformDate.getFullYear()}`;
   }
 
   onClickHome() {
