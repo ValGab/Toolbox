@@ -16,7 +16,7 @@
       maxlength="50"
     />
     <div class="antispam">
-      <span>Résultat de l'addition :</span
+      <span>Antispam - Résultat de l'addition :</span
       ><span> {{ antispam[0] }} + {{ antispam[1] }} = </span>
       <input type="number" min="0" max="18" [(ngModel)]="resultAntispam" />
       <p *ngIf="errorAntispam">Le résultat de l'addition n'est pas juste !</p>
