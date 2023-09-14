@@ -103,8 +103,8 @@ export class ScrToolboxComponent implements OnInit, OnDestroy {
     let a = 'áàâäãåçéèêëíïîìñóòôöõúùûüýÁÀÂÄÃÅÇÉÈÊËÍÏÎÌÑÓÒÔÖÕÚÙÛÜÝ';
     let b = 'aaaaaaceeeeiiiinooooouuuuyAAAAAACEEEEIIIINOOOOOUUUUY';
     let newStr = '';
-    for (var i = 0, j = value.length; i < j; i++) {
-      var c = value.charAt(i);
+    for (let i = 0, j = value.length; i < j; i++) {
+      let c = value.charAt(i);
       newStr += a.indexOf(c) !== -1 ? b.charAt(a.indexOf(c)) : c;
     }
     return newStr;
@@ -122,15 +122,22 @@ export class ScrToolboxComponent implements OnInit, OnDestroy {
     this.authService.userToDisconnect();
   }
 
+  /**
+   * Actions à l'ouverture de la modal d'outil à partager
+   */
   onClickToolRequest() {
     this.showModal = true;
     this.antispamGenerate();
+    this.errorAntispam = false;
     this.resultAntispam = 0;
     this.isLoadingRequest = false;
     this.toolRequest = '';
     this.message = '';
   }
 
+  /**
+   * On génère 2 chiffres pour l'antispam
+   */
   antispamGenerate() {
     for (let i = 0; i < 2; i++) {
       this.antispam.push(Math.floor(Math.random() * 10));
