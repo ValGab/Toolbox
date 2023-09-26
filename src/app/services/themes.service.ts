@@ -35,7 +35,7 @@ export class ThemesService {
           '--font',
           themes[i].colors[0].fontColor
         );
-        this.cookieService.set('theme', theme);
+        this.cookieService.set('theme', theme, 365);
         break;
       }
     }
